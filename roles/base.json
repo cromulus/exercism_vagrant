@@ -15,7 +15,6 @@
   "chef_type": "role",
   "run_list": [
     "recipe[apt]",
-    "recipe[apt-cacher-ng]",
     "recipe[nodejs::install_from_package]",
     "recipe[nodejs::npm]",
     "recipe[ruby]",

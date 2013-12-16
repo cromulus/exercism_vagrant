@@ -4,11 +4,11 @@
 site 'http://community.opscode.com/api/v1'
 
 cookbook "apt"
-cookbook "apt-cacher-ng"
 cookbook "build-essential"
 # standard library is broken on latest rubies.
 cookbook "ruby", :git => "https://github.com/apfritts/ruby-cookbook.git"
 cookbook "nodejs"
+#cookbook "phantomjs" currently broken. using shell provisioner.
 cookbook 'golang'
 cookbook 'leiningen' #clojure
 cookbook 'haskell', :git => 'https://github.com/algas/haskell-cookbook.git'
@@ -16,4 +16,5 @@ cookbook 'scala'
 cookbook 'perl'
 cookbook 'python'
 
+#running ruby 1.8.7 on the guest, so we need an older yum cookbook
 cookbook 'yum',:git=>'https://github.com/opscode-cookbooks/yum.git',:ref=>'v2.4.4'

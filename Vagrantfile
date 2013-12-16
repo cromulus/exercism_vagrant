@@ -40,13 +40,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  if Vagrant.has_plugin?("vagrant-cachier")
-    config.cache.auto_detect = true
-  end
-
-
   config.omnibus.chef_version = :latest
+
+  config.cache.auto_detect = true
   config.cache.enable_nfs = true
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
