@@ -29,3 +29,5 @@ type exercism >/dev/null 2>&1 || \
   tar -xzf /var/chef/cache/exercism-linux-amd64.tgz;
   sudo mv /var/chef/cache/exercism /usr/local/bin/;
 }
+
+ln -ls /vagrant/ /home/vagrant/exercises
