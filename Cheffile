@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook "apt"
+cookbook "apt-cacher-ng"
+cookbook "git"
+cookbook "build-essential"
+cookbook "rvm",:git=>"git@github.com:fnichol/chef-rvm.git"
+cookbook "nodejs"
+cookbook "phantomjs"
+cookbook 'nodejs'
+cookbook 'npm'
+cookbook 'golang'
+cookbook 'leiningen' #clojure
+cookbook 'haskell', :git=>'https://github.com/algas/haskell-cookbook.git'
+cookbook 'scala'
+cookbook 'perl'
+cookbook 'python'

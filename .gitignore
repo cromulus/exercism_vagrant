@@ -1,0 +1,6 @@
+# Vagrant's special folder for VM state.
+.vagrant/
+
+# ignore cookbooks, they are managed by librarian-chef
+cookbooks
+tmp

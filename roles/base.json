@@ -1,0 +1,47 @@
+{
+  "name": "base_role",
+  "description": "installs all of the things you need to run execise.io",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "rvm" : {
+      "default_ruby": "2.0.0",
+      "rubies": [ "2.0.0" ],
+      "rvm_gem_options": "--no-rdoc --no-ri",
+      "global_gems":[
+        { "name": "bundler" },
+        { "name": "rake" },
+        { "name": "chef" }
+      ],
+      "vagrant": {
+        "system_chef_solo":"/usr/local/ruby/bin/chef-solo"
+      },
+      "rvmrc": {
+        "rvm_project_rvmrc":"1",
+        "rvm_gemset_create_on_use_flag":"1",
+        "rvm_trust_rvmrcs_flag":"1"
+      }
+    }
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[apt-cacher-ng]",
+    "recipe[nodejs]",
+    "recipe[rvm::system]",
+    "recipe[rvm::vagrant]",
+    "recipe[node]",
+    "recipe[npm]",
+    "recipe[phantomjs]",
+    "recipe[golan]",
+    "recipe[leiningen]",
+    "recipe[leiningen]",
+    "recipe[haskell]",
+    "recipe[perl]",
+    "recipe[scala::default]",
+    "recipe[python]"
+  ],
+  "env_run_lists": {
+  }
+}
