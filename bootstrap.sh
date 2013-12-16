@@ -23,14 +23,15 @@ fi
 type phantomjs >/dev/null 2>&1 || \
 { \
   echo >&2 "installing Phantomjs";
-  if [[ ! -f /var/chef/cache/phantomjs-1.9.2-linux-x86_64.tar.bz2 ]]; then
-    wget –quiet -O /var/chef/cache/phantomjs-1.9.2-linux-x86_64.tar.bz2 https://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2;
+  cd /var/chef/cache
+  if [[ ! -f phantomjs-1.9.2-linux-x86_64.tar.bz2 ]]; then
+    wget --quiet https://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2;
   fi
-  bzip2 -d /var/chef/cache/phantomjs-1.9.2-linux-x86_64.tar.bz2
-  tar -xf /var/chef/cache/phantomjs-1.9.2-linux-x86_64.tar
-  sudo mv /var/chef/cache/phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/bin/
-  rm -rf /var/chef/cache/phantomjs-1.9.2-linux-x86_64
-  rm /var/chef/cache/phantomjs-1.9.2-linux-x86_64.tar
+  bzip2 -d phantomjs-1.9.2-linux-x86_64.tar.bz2
+  tar -xf phantomjs-1.9.2-linux-x86_64.tar
+  sudo mv phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/bin/
+  rm -rf phantomjs-1.9.2-linux-x86_64
+  rm phantomjs-1.9.2-linux-x86_64.tar
 }
 
 
@@ -38,11 +39,12 @@ type phantomjs >/dev/null 2>&1 || \
 type exercism >/dev/null 2>&1 || \
 { \
   echo >&2 "installing exercism.io CLI";
-  if [[ ! -f /var/chef/cache/exercism-linux-amd64.tgz ]]; then
-    wget –quiet -O /var/chef/cache/exercism-linux-amd64.tgz https://github.com/exercism/cli/releases/download/v1.3.2/exercism-linux-amd64.tgz
+  cd /var/chef/cache
+  if [[ ! -f exercism-linux-amd64.tgz ]]; then
+    wget --quiet https://github.com/exercism/cli/releases/download/v1.3.2/exercism-linux-amd64.tgz
   fi
-  tar -xzf /var/chef/cache/exercism-linux-amd64.tgz
-  sudo mv /var/chef/cache/exercism /usr/local/bin/
+  tar -xzf exercism-linux-amd64.tgz
+  sudo mv exercism /usr/local/bin/
 }
 
-ln -ls /vagrant/ /home/vagrant/exercises
+ln -s /vagrant/exercises /home/vagrant/exercises

@@ -5,7 +5,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook "apt"
 cookbook "build-essential"
-# standard library is broken on latest rubies.
+# 1.9.3 doesn't install with standard cookbook
 cookbook "ruby", :git => "https://github.com/apfritts/ruby-cookbook.git"
 cookbook "nodejs"
 #cookbook "phantomjs" currently broken. using shell provisioner.

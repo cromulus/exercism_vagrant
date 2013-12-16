@@ -1,15 +1,24 @@
-A simple vagrant development environment for running exercism.io assignments.
+A Vagrant/Chef setup for running exercism.io assignments.
+=======
+
+WAT?
+---------
+Keep your personal computer nice and clean and tidy while running all of your favorite [Exercism.io](http://exercism.io) assignments on a virtualmachine with all of the goodies pre-installed. (except Objective C. Sorry!)
+
+[Vagrant](http://vagrantup.com): manages virtualmachines like a boss.
+[Chef](): cookbooks to setup computers JUST the way you like them.
 
 HOWTO:
-*clone this repository
-* install vagrant
-* install virtualbox
+* clone this repository
+* install [Vagrant](http://vagrantup.com)
+* install [Virtualbox](http://virtualbox.org)
 
-run these commands:
+Install some handy vagrant plugins:
 ```bash
-vagrant plugin install vagrant-cachier
-vagrant plugin install vagrant-librarian-chef
-``
+vagrant plugin install vagrant-omnibus # makes chef work.
+vagrant plugin install vagrant-cachier # for the speediness
+vagrant plugin install vagrant-librarian-chef # handles chef cookbooks
+```
 
 Now you are ready to roll!
 
@@ -18,9 +27,11 @@ to boot the VM run:
 vagrant up && vagrant provision
 ```
 
-it will take a while (the second time should be faster)
-but you should have a fully functional environemnt with just about everything installed.
+It will take a while (the second time should be faster) but you should have a fully functional environemnt with just about everything installed.
 
-(except objectiveC. Sorry!)
+Edit the files as you would normally, in your favorite text editor then run the tests in your VM. To run the tests, ssh into the virtual machine with:
+```
+vagrant ssh
+```
 
-edit the files as you would normally, then run the tests in your VM. 
+Then run the exercism.io assignments as you normally would!
