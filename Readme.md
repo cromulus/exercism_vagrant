@@ -8,7 +8,8 @@ Keep your personal computer nice and clean and tidy while running all of your fa
 [Vagrant](http://vagrantup.com): manages virtualmachines like a boss.
 [Chef](): cookbooks to setup computers JUST the way you like them.
 
-HOWTO:
+Install:
+----------
 * clone this repository
 * install [Vagrant](http://vagrantup.com)
 * install [Virtualbox](http://virtualbox.org)
@@ -22,6 +23,8 @@ vagrant plugin install vagrant-librarian-chef # handles chef cookbooks
 
 Now you are ready to roll!
 
+HOWTO
+------------
 to boot the VM run:
 ```bash
 vagrant up && vagrant provision
