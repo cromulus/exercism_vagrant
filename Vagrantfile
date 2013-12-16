@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  config.vm.network :public_network
+  # config.vm.network :public_network
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
@@ -43,7 +43,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.omnibus.chef_version = :latest
 
   config.cache.auto_detect = true
-  config.cache.enable_nfs = true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -54,7 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.gui = false
 
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
+    # vb.customize ["modifyvm", :id, "--memory", "512"]
   end
   #
 
@@ -70,5 +69,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # You may also specify custom JSON attributes:
     #chef.json = { :mysql_password => "foo" }
   end
+
+  #finishing it off.
   config.vm.provision :shell, :path=>'./bootstrap.sh'
 end
