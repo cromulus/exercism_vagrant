@@ -5,8 +5,8 @@ WAT?
 ---------
 Keep your personal computer nice and clean and tidy while running all of your favorite [Exercism.io](http://exercism.io) assignments on a virtualmachine with all of the goodies pre-installed. (except Objective C. Sorry!)
 
-[Vagrant](http://vagrantup.com): manages virtualmachines like a boss.
-[Chef](): cookbooks to setup computers JUST the way you like them.
+* [Vagrant](http://vagrantup.com): manages virtualmachines like a boss.
+* [Chef](http://www.getchef.com/chef/): cookbooks to setup computers JUST the way you like them.
 
 Install:
 ----------
