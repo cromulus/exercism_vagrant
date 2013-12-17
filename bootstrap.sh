@@ -40,8 +40,10 @@ type exercism >/dev/null 2>&1 || \
 { \
   echo >&2 "installing exercism.io CLI";
   cd /var/chef/cache
+  VERSION=$(curl --head --silent https://github.com/exercism/cli/releases/latest | grep Location | awk '{print $2}' | sed -e 's/https:\/\/github.com\/exercism\/cli\/releases\/tag\///')
+v1.3.2
   if [[ ! -f exercism-linux-amd64.tgz ]]; then
-    wget --quiet https://github.com/exercism/cli/releases/download/v1.3.2/exercism-linux-amd64.tgz
+    wget --quiet https://github.com/exercism/cli/releases/download/$VERSION/exercism-linux-amd64.tgz
   fi
   tar -xzf exercism-linux-amd64.tgz
   sudo mv exercism /usr/local/bin/
